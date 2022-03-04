@@ -10,8 +10,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        TextView txt = (TextView) findViewById(R.id.textView4);
-        txt.setPaintFlags( Paint.UNDERLINE_TEXT_FLAG);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
