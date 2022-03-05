@@ -7,6 +7,25 @@
     tools:context=".MainActivity2">
 
     <TextView
+        android:id="@+id/textView21"
+        android:layout_width="351dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="164dp"
+        android:autoText="false"
+        android:background="@drawable/border"
+        android:drawableRight="@drawable/vector"
+        android:freezesText="false"
+        android:gravity="center"
+        android:text="4 MÀU-CHỌN MÀU "
+        android:textColor="#1B1A1A"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <TextView
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -137,7 +156,7 @@
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:text="Ở ĐÂU RẺ HƠN HOÀN TIỀN "
         android:textColor="#CC2222"
         android:textSize="16sp"
@@ -151,7 +170,7 @@
         android:id="@+id/imageButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:background="#FFFFFF"
         android:minWidth="48dp"
         android:minHeight="48dp"
@@ -161,4 +180,23 @@
         app:layout_constraintTop_toBottomOf="@+id/textView19"
         app:srcCompat="@drawable/group_1"
         tools:ignore="SpeakableTextPresentCheck" />
+
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="354dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="20dp"
+        android:elevation="20dp"
+        android:shadowColor="#595454"
+        android:shadowRadius="50"
+        android:text="CHỌN MUA "
+        app:backgroundTint="#CD2929"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
