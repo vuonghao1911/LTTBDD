@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -31,6 +32,10 @@ public class ListAdapter1 extends BaseAdapter {
 
     @Override
     public int getCount() {
+        if (lists.size() !=0 && !lists.isEmpty()){
+            return lists.size();
+        }
+
         return 0;
     }
 
@@ -51,14 +56,18 @@ public class ListAdapter1 extends BaseAdapter {
             view= LayoutInflater.from(viewGroup.getContext()).inflate(idLayout,viewGroup,false);
         }
 
-        TextView tvTitle = (TextView) view.findViewById(R.id.title);
+        TextView tvTitle = (TextView) view.findViewById(R.id.tvLanguageName);
+        TextView tvSubTitle = (TextView) view.findViewById(R.id.subTitle);
         ImageView imageView = (ImageView) view.findViewById(R.id.logo);
-        final LinearLayout constraintLayout= (LinearLayout) view.findViewById(R.id.idLinear);
+        Button button = (Button) view.findViewById(R.id.button1);
+        final LinearLayout constraintLayout= (LinearLayout) view.findViewById(R.id.idLinearLayout);
 
         final ListItiem1 list= lists.get(i);
 
         if (lists != null && !lists.isEmpty()){
             tvTitle.setText(list.getTitle());
+            button.setText(list.getButton());
+            tvSubTitle.setText(list.getSubTitle());
             int idLogo = list.getImg();
             switch (idLogo){
                 case 1:
