@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -79,6 +80,16 @@ public class ListAdapter1 extends BaseAdapter {
                 case 3:
                     imageView.setImageResource(R.drawable.xa_can_cau);
                     break;
+                case 4:
+                    imageView.setImageResource(R.drawable.do_choi_dang_mo_hinh);
+                    break;
+                case 5:
+                    imageView.setImageResource(R.drawable.hieu_long_con_tre);
+                    break;
+                case 6:
+                    imageView.setImageResource(R.drawable.lanh_dao_gian_don);
+                    break;
+
             }
 
             view.setOnClickListener(new View.OnClickListener() {
@@ -90,6 +101,12 @@ public class ListAdapter1 extends BaseAdapter {
                 }
             });
 
+
+            if (positionSelect == i) {
+                constraintLayout.setBackgroundColor(Color.alpha(141));
+            } else {
+                constraintLayout.setBackgroundColor(Color.WHITE);
+            }
 
         }
         return view;
