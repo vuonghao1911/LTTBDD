@@ -20,13 +20,10 @@ public class MainTest extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         listView = (ListView) findViewById(R.id.idList1);
         listLanguage = new ArrayList<>();
-        listLanguage.add(new ListItiem1(1, "Ca Nấu Lẩu","Shop Devan","Chat"));
-        listLanguage.add(new ListItiem1(2, "1KG Khô Gà Bơ Tỏi","Shop LDT Food","Chon"));
+        listLanguage.add(new ListItiem1(1, "Cáp chuyển từ Cổng USB sang PS2","Cáp chuyển từ Cổng USB sang PS2","Chat"));
+        listLanguage.add(new ListItiem1(2, "Đầu nối ","Cap sạc type C","Chon"));
         listLanguage.add(new ListItiem1(3, "Xe Cần Cẩu Đa Năng","Shop The Gioi Do Choi","Nhap"));
-        //  listLanguage.add(new ListItiem1(4, "Đồ Chơi Dạng Mô Hình","Shop The Gioi Do Choi","Nhap"));
-        //listLanguage.add(new ListItiem1(5, "Lãnh Đạo Giản Đơn","Shop The Gioi Do Choi","Nhap"));
-        //listLanguage.add(new ListItiem1(6, "Hiểu Lòng Con Trẻ","Shop The Gioi Do Choi","Nhap"));
-        // listLanguage.add(new ListItiem1(2, "Đắt Nhân Tâm","Shop The Gioi Do Choi","Nhap"));
+
 
 
         ListAdapter_dcap adapter = new ListAdapter_dcap(this, R.layout.list_custom_dcap, listLanguage);
