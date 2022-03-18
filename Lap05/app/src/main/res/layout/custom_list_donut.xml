@@ -8,15 +8,15 @@
 
     <View
         android:id="@+id/view"
-        android:layout_width="400dp"
-        android:layout_height="158dp"
+        android:layout_width="408dp"
+        android:layout_height="162dp"
         android:background="@drawable/border"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.008" />
+        app:layout_constraintVertical_bias="0.027" />
 
     <ImageView
         android:id="@+id/imgDonut"
@@ -72,14 +72,14 @@
         android:id="@+id/btnPlus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="16dp"
         android:background="#F4DDDD"
         android:minWidth="48dp"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.9"
+        app:layout_constraintVertical_bias="0.894"
         app:srcCompat="@drawable/plus_button"
         tools:ignore="SpeakableTextPresentCheck" />
 

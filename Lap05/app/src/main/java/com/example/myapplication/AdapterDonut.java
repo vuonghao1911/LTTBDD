@@ -22,6 +22,35 @@ public class AdapterDonut extends BaseAdapter {
         this.donutList = donutList;
     }
 
+    public AdapterDonut(Context context, int idLayout) {
+        this.context = context;
+        this.idLayout = idLayout;
+    }
+
+    public Context getContext() {
+        return context;
+    }
+
+    public void setContext(Context context) {
+        this.context = context;
+    }
+
+    public int getIdLayout() {
+        return idLayout;
+    }
+
+    public void setIdLayout(int idLayout) {
+        this.idLayout = idLayout;
+    }
+
+    public List<Donut> getDonutList() {
+        return donutList;
+    }
+
+    public void setDonutList(List<Donut> donutList) {
+        this.donutList = donutList;
+    }
+
     @Override
     public int getCount() {
         if(donutList.size() !=0 && !donutList.isEmpty()){
