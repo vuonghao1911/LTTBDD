@@ -22,11 +22,10 @@
 
     <ListView
         android:id="@+id/idList"
-        android:layout_width="wrap_content"
-        android:layout_height="515dp"
+        android:layout_width="407dp"
+        android:layout_height="496dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.972" />
@@ -45,7 +44,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/edText"
         android:layout_width="270dp"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
@@ -59,5 +58,46 @@
         app:layout_constraintHorizontal_bias="0.127"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <Button
+        android:id="@+id/btnDonut"
+        android:layout_width="99dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#F1B000"
+        android:text="Donut"
+        app:cornerRadius="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edText" />
+
+    <Button
+        android:id="@+id/btnPinkDonut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#F4DDDD"
+        android:text="Pink Donut"
+        android:textColor="#776C6C"
+        app:cornerRadius="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edText" />
+
+    <Button
+        android:id="@+id/btnFloating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#F4DDDD"
+        android:text="Floating"
+        android:textColor="#8C8181"
+        app:cornerRadius="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.904"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
