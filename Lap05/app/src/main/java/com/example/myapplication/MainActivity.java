@@ -2,14 +2,18 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +41,6 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         donutList.add(new Donut("Custard Donut","Spicy tasty donut family","$15.00",R.drawable.donut_red_1));
 
         AdapterDonut adapterDonut = new AdapterDonut(this,R.layout.custom_list_donut,donutList);
-        AdapterDonut adapterDonutSearch = new AdapterDonut(this,R.layout.custom_list_donut);
 
          listView.setAdapter(adapterDonut);
 
@@ -68,9 +71,24 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
                         list.add(donut);
                     }
                 }
-              adapterDonutSearch.setDonutList(list);
-                listView.setAdapter(adapterDonutSearch);
+              adapterDonut.setDonutList(list);
+                listView.setAdapter(adapterDonut);
             }
+        });
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+               // Toast.makeText(getApplicationContext(),donutList.get(i).getTitle(),Toast.LENGTH_LONG).show();
+                Intent intent =     new Intent(MainActivity.this,MainActivity2.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("Title",donutList.get(i).getTitle());
+                bundle.putString("SubTitle",donutList.get(i).getSubTitle());
+                bundle.putString("Price",donutList.get(i).getPrice());
+                bundle.putInt("Img",donutList.get(i).getImg());
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+
         });
 
 
@@ -87,14 +105,17 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
     public void onClick(View view) {
         if (view==btnFloat){
             btnFloat.setBackgroundColor(Color.rgb(241, 176, 0));
+            btnFloat.setTextColor(Color.WHITE);
             changeColorButton(btnDonut,btnPink);
         }
         if (view==btnDonut){
             btnDonut.setBackgroundColor(Color.rgb(241, 176, 0));
+            btnDonut.setTextColor(Color.WHITE);
             changeColorButton(btnFloat,btnPink);
         }
         if (view==btnPink){
             btnPink.setBackgroundColor(Color.rgb(241, 176, 0));
+            btnPink.setTextColor(Color.WHITE);
             changeColorButton(btnFloat,btnDonut);
         }
 
