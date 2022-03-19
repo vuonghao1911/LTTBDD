@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
     Button btnPink;
     Button btnFloat;
     EditText edtSearch;
+    private  AdapterDonut adapterDonut;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         donutList.add(new Donut("Floating Donut","Spicy tasty donut family","$30.00",R.drawable.green_donut_1));
         donutList.add(new Donut("Custard Donut","Spicy tasty donut family","$15.00",R.drawable.donut_red_1));
 
-        AdapterDonut adapterDonut = new AdapterDonut(this,R.layout.custom_list_donut,donutList);
+         adapterDonut = new AdapterDonut(this,R.layout.custom_list_donut,donutList);
 
          listView.setAdapter(adapterDonut);
 
@@ -107,17 +108,30 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
             btnFloat.setBackgroundColor(Color.rgb(241, 176, 0));
             btnFloat.setTextColor(Color.WHITE);
             changeColorButton(btnDonut,btnPink);
+            renderDonutByName(btnFloat);
         }
         if (view==btnDonut){
             btnDonut.setBackgroundColor(Color.rgb(241, 176, 0));
             btnDonut.setTextColor(Color.WHITE);
             changeColorButton(btnFloat,btnPink);
+            renderDonutByName(btnDonut);
         }
         if (view==btnPink){
             btnPink.setBackgroundColor(Color.rgb(241, 176, 0));
             btnPink.setTextColor(Color.WHITE);
             changeColorButton(btnFloat,btnDonut);
+            renderDonutByName(btnPink);
         }
-
+    }
+    private void renderDonutByName(Button button){
+        String name = button.getText().toString();
+        List<Donut> list = new ArrayList<>();
+        for (Donut donut: donutList) {
+            if(donut.getTitle().toLowerCase().contains(name.toLowerCase())){
+                list.add(donut);
+            }
+        }
+        adapterDonut.setDonutList(list);
+        listView.setAdapter(adapterDonut);
     }
 }
