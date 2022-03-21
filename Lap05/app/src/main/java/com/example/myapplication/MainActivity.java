@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -19,13 +20,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity  implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private List<Donut> donutList;
     private ListView listView;
     Button btnDonut;
     Button btnPink;
     Button btnFloat;
     EditText edtSearch;
+
     private  AdapterDonut adapterDonut;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
          btnFloat = (Button) findViewById(R.id.btnFloating);
          btnPink = (Button) findViewById(R.id.btnPinkDonut);
          edtSearch = (EditText) findViewById(R.id.edText) ;
+
          btnDonut.setOnClickListener(this);
          btnFloat.setOnClickListener(this);
          btnPink.setOnClickListener(this);
@@ -76,6 +79,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
                 listView.setAdapter(adapterDonut);
             }
         });
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -88,6 +92,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
                 bundle.putInt("Img",donutList.get(i).getImg());
                 intent.putExtras(bundle);
                 startActivity(intent);
+
             }
 
         });
@@ -133,5 +138,16 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         }
         adapterDonut.setDonutList(list);
         listView.setAdapter(adapterDonut);
+    }
+    public void addDonut(int i){
+        Toast.makeText(this,"Add "+donutList.get(i).getTitle(),Toast.LENGTH_LONG).show();
+        Intent intent =     new Intent(MainActivity.this,MainActivity2.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("Title",donutList.get(i).getTitle());
+        bundle.putString("SubTitle",donutList.get(i).getSubTitle());
+        bundle.putString("Price",donutList.get(i).getPrice());
+        bundle.putInt("Img",donutList.get(i).getImg());
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 }

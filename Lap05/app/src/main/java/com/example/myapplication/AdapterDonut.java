@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,26 +13,26 @@ import java.util.List;
 
 public class AdapterDonut extends BaseAdapter {
 
-    private Context context;
+    private MainActivity context;
     private int idLayout;
     private List<Donut> donutList;
 
-    public AdapterDonut(Context context, int idLayout, List<Donut> donutList) {
+    public AdapterDonut(MainActivity context, int idLayout, List<Donut> donutList) {
         this.context = context;
         this.idLayout = idLayout;
         this.donutList = donutList;
     }
 
-    public AdapterDonut(Context context, int idLayout) {
+    public AdapterDonut(MainActivity context, int idLayout) {
         this.context = context;
         this.idLayout = idLayout;
     }
 
-    public Context getContext() {
+    public MainActivity getContext() {
         return context;
     }
 
-    public void setContext(Context context) {
+    public void setContext(MainActivity context) {
         this.context = context;
     }
 
@@ -79,6 +80,7 @@ public class AdapterDonut extends BaseAdapter {
         TextView tvSubTitle = (TextView) view.findViewById(R.id.tvSubTitle);
         ImageView img = view.findViewById(R.id.imgDonut);
         TextView tvPrice = (TextView) view.findViewById(R.id.tvGia);
+        ImageButton ibtPlus = (ImageButton) view.findViewById(R.id.btnPlus);
          final  Donut donut = donutList.get(i);
          if(donutList!=null && !donutList.isEmpty()){
              tvTitle.setText(donut.getTitle());
@@ -87,6 +89,12 @@ public class AdapterDonut extends BaseAdapter {
              img.setImageResource(donut.getImg());
          }
 
+         ibtPlus.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 context.addDonut(i);
+             }
+         });
         return view;
     }
 }
