@@ -1,13 +1,18 @@
 package com.example.myapplication;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,8 +35,14 @@ public class ShoesFragment extends Fragment {
 
     private List<Shoes> shoesList;
     private ListView listView;
+    private TextView tvTitle;
     ShoesAdapter shoesAdapter;
+    Shoes shoes1;
+        listviewlisen listviewlisen;
 
+    public  interface  listviewlisen{
+        void sendata(Shoes shoes);
+    }
     public ShoesFragment() {
         // Required empty public constructor
     }
@@ -52,6 +63,12 @@ public class ShoesFragment extends Fragment {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        listviewlisen =  (listviewlisen) getActivity();
     }
 
     @Override
@@ -79,7 +96,26 @@ public class ShoesFragment extends Fragment {
         shoesAdapter = new ShoesAdapter(getActivity(),shoesList,R.layout.custom_shose_list);
 
         listView.setAdapter(shoesAdapter);
+        tvTitle = view.findViewById(R.id.idTitle);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        sent(i);
+                //shoes1 = shoesList.get(i);
+               // listviewlisen.sendata(shoes1.getTitle());
+               // Toast.makeText(getContext(),shoes1.getTitle(),Toast.LENGTH_LONG);
+            }
+
+
+        });
         // Inflate the layout for this fragment
      return  view;
+    }
+
+    private void sent(int i) {
+        shoes1 = shoesList.get(i);
+        listviewlisen.sendata(shoes1);
+       // Toast.makeText(getActivity(),shoes1.getTitle(),Toast.LENGTH_LONG);
     }
 }
