@@ -66,11 +66,12 @@ public class DetailsShoesFragment extends Fragment {
         View view= inflater.inflate(R.layout.fragment_details_shoes, container, false);
         imgView = view.findViewById(R.id.idImgDe);
         tvTitle = view.findViewById(R.id.idDetails);
-        String title = getArguments().getString("title");
-        int img = getArguments().getInt("img");
+        Bundle bundle = getArguments();
+     //   String title = getArguments().getString("title");
+       // int img = getArguments().getInt("img");
 
-        tvTitle.setText(title);
-        imgView.setImageResource(img);
+        tvTitle.setText(bundle.getString("title"));
+        imgView.setImageResource(bundle.getInt("img"));
 
         return  view;
     }

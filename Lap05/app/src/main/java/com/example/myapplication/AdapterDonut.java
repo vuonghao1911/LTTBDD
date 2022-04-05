@@ -85,7 +85,7 @@ public class AdapterDonut extends BaseAdapter {
          if(donutList!=null && !donutList.isEmpty()){
              tvTitle.setText(donut.getTitle());
              tvSubTitle.setText(donut.getSubTitle());
-             tvPrice.setText(donut.getPrice());
+             tvPrice.setText("$ "+donut.getPrice());
              img.setImageResource(donut.getImg());
          }
 

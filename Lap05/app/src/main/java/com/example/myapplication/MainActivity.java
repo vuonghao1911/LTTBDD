@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -38,10 +39,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         listView = (ListView) findViewById(R.id.idList);
 
         donutList = new ArrayList<>();
-        donutList.add(new Donut("Tasty Donut","Spicy tasty donut family","$10.00",R.drawable.donut_yellow_1));
-        donutList.add(new Donut("Pink Donut","Spicy tasty donut family","$20.00",R.drawable.tasty_donut_1));
-        donutList.add(new Donut("Floating Donut","Spicy tasty donut family","$30.00",R.drawable.green_donut_1));
-        donutList.add(new Donut("Custard Donut","Spicy tasty donut family","$15.00",R.drawable.donut_red_1));
+        donutList.add(new Donut("Tasty Donut","Spicy tasty donut family",10,R.drawable.donut_yellow_1));
+        donutList.add(new Donut("Pink Donut","Spicy tasty donut family",20,R.drawable.tasty_donut_1));
+        donutList.add(new Donut("Floating Donut","Spicy tasty donut family",30,R.drawable.green_donut_1));
+        donutList.add(new Donut("Custard Donut","Spicy tasty donut family",15,R.drawable.donut_red_1));
 
          adapterDonut = new AdapterDonut(this,R.layout.custom_list_donut,donutList);
 
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
          btnDonut.setOnClickListener(this);
          btnFloat.setOnClickListener(this);
          btnPink.setOnClickListener(this);
+
 
         edtSearch.addTextChangedListener(new TextWatcher() {
             @Override
@@ -88,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Bundle bundle = new Bundle();
                 bundle.putString("Title",donutList.get(i).getTitle());
                 bundle.putString("SubTitle",donutList.get(i).getSubTitle());
-                bundle.putString("Price",donutList.get(i).getPrice());
+                bundle.putInt("Price",donutList.get(i).getPrice());
                 bundle.putInt("Img",donutList.get(i).getImg());
                 intent.putExtras(bundle);
                 startActivity(intent);
@@ -145,7 +147,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Bundle bundle = new Bundle();
         bundle.putString("Title",donutList.get(i).getTitle());
         bundle.putString("SubTitle",donutList.get(i).getSubTitle());
-        bundle.putString("Price",donutList.get(i).getPrice());
+        bundle.putInt("Price",donutList.get(i).getPrice());
         bundle.putInt("Img",donutList.get(i).getImg());
         intent.putExtras(bundle);
         startActivity(intent);

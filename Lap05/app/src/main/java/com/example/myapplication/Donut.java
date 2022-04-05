@@ -5,10 +5,10 @@ import android.media.Image;
 public class Donut {
     private String title;
     private String subTitle;
-    private String price;
+    private int price;
     private int img;
 
-    public Donut(String title, String subTitle, String price, int img) {
+    public Donut(String title, String subTitle, int price, int img) {
         this.title = title;
         this.subTitle = subTitle;
         this.price = price;
@@ -31,11 +31,11 @@ public class Donut {
         this.subTitle = subTitle;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

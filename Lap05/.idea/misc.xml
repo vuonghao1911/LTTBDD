@@ -6,8 +6,9 @@
         <entry key="..\:/HK2/LTTBDD/Lap05/app/src/main/res/drawable/background_edittext.xml" value="0.1535" />
         <entry key="..\:/HK2/LTTBDD/Lap05/app/src/main/res/drawable/border.xml" value="0.1535" />
         <entry key="..\:/HK2/LTTBDD/Lap05/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/HK2/LTTBDD/Lap05/app/src/main/res/layout/activity_main2.xml" value="0.2" />
-        <entry key="..\:/HK2/LTTBDD/Lap05/app/src/main/res/layout/custom_list_donut.xml" value="0.264" />
+        <entry key="..\:/HK2/LTTBDD/Lap05/app/src/main/res/layout/activity_main2.xml" value="0.4" />
+        <entry key="..\:/HK2/LTTBDD/Lap05/app/src/main/res/layout/activity_pay_donut.xml" value="0.264" />
+        <entry key="..\:/HK2/LTTBDD/Lap05/app/src/main/res/layout/custom_list_donut.xml" value="0.2" />
       </map>
     </option>
   </component>

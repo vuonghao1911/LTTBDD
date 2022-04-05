@@ -18,6 +18,7 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
     private ImageView imgV;
     private  ImageButton btnMinus;
     private ImageButton btnPlus;
+    private  int gia;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,8 +35,9 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
         Bundle bundle = getIntent().getExtras();
         tvTitle.setText(bundle.getString("Title"));
         tvSubTitle.setText(bundle.getString("SubTitle"));
-        price.setText(bundle.getString("Price"));
+        price.setText("$ "+bundle.getInt("Price"));
         imgV.setImageResource(bundle.getInt("Img"));
+        gia= bundle.getInt("Price");
         btnPlus.setOnClickListener(this);
         btnMinus.setOnClickListener(this);
     }
@@ -45,6 +47,8 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
         if (view==btnPlus){
             int i = Integer.parseInt(tvAmount.getText().toString());
             tvAmount.setText(String.valueOf(i+1));
+            price.setText("$ "+gia*(i+1));
+
         }
         if (view==btnMinus){
             int i = Integer.parseInt(tvAmount.getText().toString());
@@ -52,6 +56,7 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
                 Toast.makeText(MainActivity2.this,"Không thể giảm được do số lượng đang là 0",Toast.LENGTH_LONG).show();
             } else
                 tvAmount.setText(String.valueOf(i - 1));
+            price.setText("$ "+gia*(i-1));
         }
     }
 }
