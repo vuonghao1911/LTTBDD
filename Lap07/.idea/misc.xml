@@ -4,8 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/HK2/LTTBDD/Lap07/app/src/main/res/drawable/backgrouund_edittext.xml" value="0.1455" />
+        <entry key="..\:/HK2/LTTBDD/Lap07/app/src/main/res/drawable/backgrouund_list_con.xml" value="0.1555" />
         <entry key="..\:/HK2/LTTBDD/Lap07/app/src/main/res/layout/activity_main.xml" value="0.25052083333333336" />
+        <entry key="..\:/HK2/LTTBDD/Lap07/app/src/main/res/layout/activity_main2.xml" value="0.1" />
+        <entry key="..\:/HK2/LTTBDD/Lap07/app/src/main/res/layout/custom_list_con.xml" value="0.25052083333333336" />
         <entry key="..\:/HK2/LTTBDD/Lap07/app/src/main/res/layout/list_adapter.xml" value="0.25052083333333336" />
+        <entry key="..\:/HK2/LTTBDD/Lap07/app/src/main/res/layout/list_con.xml" value="0.25052083333333336" />
       </map>
     </option>
   </component>

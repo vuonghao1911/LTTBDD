@@ -1,24 +1,24 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity2 extends AppCompatActivity {
     ListView listView ;
-    AdapterList adapterList ;
+    AdapterListCon adapterList ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.list_con);
 
         DatabaseHandler db = new DatabaseHandler(this);
 
-        // Inserting Contacts
+//        // Inserting Contacts
 //      Log.d("Insert: ", "Inserting ..");
 //      db.addContact(new Contact("Ravi", "9100000000"));
 //       db.addContact(new Contact("Srinivas", "9199999999"));
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         listView = findViewById(R.id.idListCon);
-        adapterList = new AdapterList(this,contacts,R.layout.list_adapter);
+        adapterList = new AdapterListCon(this,contacts,R.layout.custom_list_con);
         listView.setAdapter(adapterList);
     }
 }
