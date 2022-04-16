@@ -23,6 +23,10 @@ public class AdapterList extends BaseAdapter {
         IdLayout = idLayout;
     }
 
+    public void setContacts(List<Contact> contacts) {
+        this.contacts = contacts;
+    }
+
     @Override
     public int getCount() {
         return contacts.size();

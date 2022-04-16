@@ -39,5 +39,6 @@ public class MainActivity2 extends AppCompatActivity {
         listView = findViewById(R.id.idListCon);
         adapterList = new AdapterListCon(this,contacts,R.layout.custom_list_con);
         listView.setAdapter(adapterList);
+
     }
 }

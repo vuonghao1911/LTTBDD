@@ -11,6 +11,10 @@ public class Contact {
         this._phone_number = _phone_number;
     }
 
+    public Contact(String _name) {
+        this._name = _name;
+    }
+
     public Contact(String name, String _phone_number){
         this._name = name;
         this._phone_number = _phone_number;

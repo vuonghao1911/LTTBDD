@@ -18,7 +18,7 @@
         app:backgroundTint="#E37755"
         app:cornerRadius="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/ideditext" />
 
     <ListView
         android:id="@+id/idListCon"
@@ -34,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/ideditext"
         android:layout_width="389dp"
         android:layout_height="76dp"
         android:layout_marginTop="16dp"
@@ -48,7 +48,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/idbtnRemove"
         android:layout_width="155dp"
         android:layout_height="73dp"
         android:layout_marginStart="16dp"
@@ -58,5 +58,5 @@
         app:backgroundTint="#CD4A20"
         app:cornerRadius="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/ideditext" />
 </androidx.constraintlayout.widget.ConstraintLayout>
