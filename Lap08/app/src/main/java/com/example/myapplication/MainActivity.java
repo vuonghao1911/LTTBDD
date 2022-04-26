@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
+/*
+hao
+ */
 public class MainActivity extends AppCompatActivity {
     private Button btnSign;
     private  Button btnReg;
