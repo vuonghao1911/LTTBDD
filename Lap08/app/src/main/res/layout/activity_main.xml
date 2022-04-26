@@ -16,7 +16,7 @@
         app:srcCompat="@drawable/intersect" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/idBtnSignin"
         android:layout_width="260dp"
         android:layout_height="61dp"
         android:layout_marginBottom="256dp"
@@ -33,7 +33,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/idBtnReg"
         android:layout_width="261dp"
         android:layout_height="59dp"
         android:layout_marginTop="76dp"
@@ -44,7 +44,7 @@
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/idBtnSignin" />
 
     <ImageView
         android:id="@+id/imageView2"
