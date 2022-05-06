@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -45,9 +46,14 @@ public class MainActivity2 extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             Log.d(TAG,"thanh cong") ;
+                        String uid  =    FirebaseAuth.getInstance().getCurrentUser().getUid();
+                            Intent i = new Intent(MainActivity2.this,MainActivity4.class);
+                            i.putExtra("uid",uid);
+                            startActivity(i);
                         }
                         else {
                             Log.d(TAG, "onComplete: " + task.getException().getLocalizedMessage());
+                            Toast.makeText(getApplication(),"Dang Nhap Khong Thanh Cong",Toast.LENGTH_LONG).show();
                         }
                     }
                 });
